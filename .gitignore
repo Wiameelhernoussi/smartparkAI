@@ -1,0 +1,30 @@
+# IA Models (Very Heavy)
+*.pt
+*.keras
+*.h5
+*.pkl
+models/
+train/results/
+
+# Binaries
+*.exe
+*.dll
+
+# Data & OS
+PKLot/
+dataset/
+videos/
+uncertain_queue/
+parking.db
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+backend/venv/
+dist/
+
+```
+yolo_frames/
+*.jpg
+*.png

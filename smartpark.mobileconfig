@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadCertificateFileName</key>
+            <string>SmartPark CA</string>
+            <key>PayloadContent</key>
+            <data>MIIE1DCCAzygAwIBAgIRAKTvV4G1zOFaS4LS6onwRiQwDQYJKoZIhvcNAQELBQAwgYExHjAcBgNVBAoTFW1rY2VydCBkZXZlbG9wbWVudCBDQTErMCkGA1UECwwiREVTS1RPUC1FNkNQSDJDXGhwQERFU0tUT1AtRTZDUEgyQzEyMDAGA1UEAwwpbWtjZXJ0IERFU0tUT1AtRTZDUEgyQ1xocEBERVNLVE9QLUU2Q1BIMkMwHhcNMjYwNTA4MjMyMzUwWhcNMzYwNTA4MjMyMzUwWjCBgTEeMBwGA1UEChMVbWtjZXJ0IGRldmVsb3BtZW50IENBMSswKQYDVQQLDCJERVNLVE9QLUU2Q1BIMkNcaHBAREVTS1RPUC1FNkNQSDJDMTIwMAYDVQQDDClta2NlcnQgREVTS1RPUC1FNkNQSDJDXGhwQERFU0tUT1AtRTZDUEgyQzCCAaIwDQYJKoZIhvcNAQEBBQADggGPADCCAYoCggGBAMHL4iWRSpqz17S+XLuHJB3KD60G5J3RVovNnWC4OpaKx5pG5knzrd5TR5sF3ldp6w5LzWDS7dIYh/4COeDKVYhWP/cLtPS7vLKIHVqH4QypfFzE/3hgDbQ6TRMgFrDxADMlpYVWbSZBwme4JufksTHliM85EQT8qdcAY31PuVET7b6DCA8KkuNM1DPe7zlHuXd4hwVHhzlCuhPaUYUF2H30uobitzxsSdIXjKwrALtZXRO+L+lO8Q3HUsPGZtTccOydV/9r/BBqtyzJ1jEiJz0LkU22tRuZYMevGSmNfhIimnN4fmAs/wE0k+uvvdqDQmL0DiFYdYbaJKHFY9Uz1+DYaI02wx5Tcs+70FQcqe47nKyl8cGO/oW0jQGpPM6r40L2dQvIFK7KseYevw4pzZ6gy7W9NTsm6hEZr7tpGoYS8Drc3DkwucULBi3tWeUraRddkJL3/y1K+kKzpubHPZeybgEeUwUCABhKEQ0LL5EfZofx3vFdpJdLJfviP8DSzQIDAQABo0UwQzAOBgNVHQ8BAf8EBAMCAgQwEgYDVR0TAQH/BAgwBgEB/wIBADAdBgNVHQ4EFgQUXYqPc7PdrkzH952pAyERFvrmje0wDQYJKoZIhvcNAQELBQADggGBAK7we3r3qx5x6YqJMi47Is6inWdw8nr1UMaY7niy4/MboAxzPMrxIafkQRuWOoUXea41a70WXQk7GlOtoYf1YZf4LZc1pimElNGoFhd5QKhUg357Hom3aY2g/CLIy2x6Dp4Xa7BB+CMsN1/Tb5GYWqR8r3+Y2r8bH+Bzv5QLO5T8qgoSLkaOaWr7XO9THwQBWQQjU1Y8rQ561h+EAGhSnHuejcYhL0HsRiSZqM5d2w7L9JtjFnniD5HswS8eJ+PWls0Z7ZFCmLVomjtTkwaqHVEHINkxVAO/NCpCM+nneoOsye2imnUx/X6Gy17BKdvnFjJhdFiyQv2dRIbG6ZmRIX6WwE8UsW0zZBVwDqjHra8/iTdAG1rXc4pISFVAiMPsanFykVD8AZk/txTVr+tG+HmPlWinohvpIt7VHLaiScowC7kxwfCMRpGbCUd6zQaI9Hmzf4ITP/LbfB1n1ZWcO5zIJrtZwNDXTBQOs3ceR7Yq4JAD9I/nYjlKJ0ZzBMbfaw==</data>
+            <key>PayloadDescription</key>
+            <string>SmartPark Local CA Certificate</string>
+            <key>PayloadDisplayName</key>
+            <string>SmartPark Local CA</string>
+            <key>PayloadIdentifier</key>
+            <string>com.smartpark.ca</string>
+            <key>PayloadType</key>
+            <string>com.apple.security.root</string>
+            <key>PayloadUUID</key>
+            <string>6530fac0-8482-4c65-9f25-5450187d76e7</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+        </dict>
+    </array>
+    <key>PayloadDescription</key>
+    <string>SmartPark Marrakech Local Certificate</string>
+    <key>PayloadDisplayName</key>
+    <string>SmartPark Marrakech</string>
+    <key>PayloadIdentifier</key>
+    <string>com.smartpark.profile</string>
+    <key>PayloadRemovalDisallowed</key>
+    <false/>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>5c52e315-aa4d-4302-b7c2-b94ebc345cf5</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+</dict>
+</plist>

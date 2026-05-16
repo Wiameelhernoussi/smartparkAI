@@ -1,0 +1,112 @@
+{
+  "info": {
+    "name": "SmartPark API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login Admin",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:8000/admin/login",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\": \"admin@smartpark.ma\", \"password\": \"admin123\"}",
+              "options": {"raw": {"language": "json"}}
+            }
+          },
+          "event": [{
+            "listen": "test",
+            "script": {
+              "exec": [
+                "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                "pm.test('Token présent', () => {",
+                "  const json = pm.response.json();",
+                "  pm.expect(json).to.have.property('access_token');",
+                "  pm.environment.set('token', json.access_token);",
+                "});"
+              ]
+            }
+          }]
+        }
+      ]
+    },
+    {
+      "name": "Parkings",
+      "item": [
+        {
+          "name": "GET /parkings",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8000/parkings"
+          },
+          "event": [{
+            "listen": "test",
+            "script": {
+              "exec": [
+                "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                "pm.test('Retourne liste', () => {",
+                "  const json = pm.response.json();",
+                "  pm.expect(json).to.be.an('array');",
+                "  pm.expect(json.length).to.be.above(0);",
+                "});"
+              ]
+            }
+          }]
+        },
+        {
+          "name": "GET /api/parkings/1/predictions",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8000/api/parkings/1/predictions"
+          },
+          "event": [{
+            "listen": "test",
+            "script": {
+              "exec": [
+                "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                "pm.test('Prédictions présentes', () => {",
+                "  const json = pm.response.json();",
+                "  pm.expect(json).to.have.property('predictions');",
+                "  pm.expect(json.predictions).to.have.length(3);",
+                "});"
+              ]
+            }
+          }]
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "GET /admin/overview",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8000/admin/overview",
+            "header": [{
+              "key": "Authorization",
+              "value": "Bearer {{token}}"
+            }]
+          },
+          "event": [{
+            "listen": "test",
+            "script": {
+              "exec": [
+                "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                "pm.test('KPIs présents', () => {",
+                "  const json = pm.response.json();",
+                "  pm.expect(json).to.have.property('total_free_spots');",
+                "  pm.expect(json).to.have.property('parkings');",
+                "});"
+              ]
+            }
+          }]
+        }
+      ]
+    }
+  ]
+}

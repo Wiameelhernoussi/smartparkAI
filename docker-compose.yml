@@ -1,0 +1,46 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: smartpark_db
+    restart: always
+    environment:
+      POSTGRES_DB: smartparking
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d smartparking"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: smartpark_app
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=smartparking
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - SECRET_KEY=smartpark_super_secret_key_123
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./backend/models:/app/models
+      - ./backend/videos:/app/videos
+      - ./backend/uncertain_queue:/app/uncertain_queue
+      - ./backend/dataset:/app/dataset
+      - ./backend/vapid_keys.json:/app/vapid_keys.json
+
+volumes:
+  postgres_data:
