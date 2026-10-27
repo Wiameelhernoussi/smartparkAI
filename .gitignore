@@ -24,6 +24,19 @@ node_modules/
 backend/venv/
 dist/
 
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# TLS certificates and private keys
+*.pem
+*.key
+
+# VAPID credentials
+vapid_keys.json
+
+
 ```
 yolo_frames/
 *.jpg
