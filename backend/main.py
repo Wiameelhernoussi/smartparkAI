@@ -52,6 +52,11 @@ VAPID_KEYS = {
     "public_key": os.getenv("VAPID_PUBLIC_KEY"),
     "private_key": os.getenv("VAPID_PRIVATE_KEY"),
 }
+
+if not all(VAPID_KEYS.values()):
+    raise RuntimeError(
+        "Missing VAPID configuration: set VAPID_PUBLIC_KEY and VAPID_PRIVATE_KEY in backend/.env"
+    )
 VAPID_CLAIMS = {"sub": "mailto:admin@smartpark.ma"}
 app = FastAPI()
 app.add_middleware(
