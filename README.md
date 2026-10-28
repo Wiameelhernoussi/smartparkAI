@@ -1,6 +1,6 @@
 🚗 SmartParkAI — Intelligent Parking Monitoring & Prediction
 
-**SmartParkAI** is an intelligent parking management project that combines computer vision, machine learning, time-series forecasting, and web technologies to support parking-space monitoring and occupancy prediction.
+**SmartParkAI** is an intelligent parking management project that combines computer vision, deep learning, time-series forecasting, and web technologies to support parking-space monitoring and occupancy prediction.
 
 The project brings together a Python backend, an interactive web frontend, and AI components designed to analyze parking-related data and provide predictive insights.
 
