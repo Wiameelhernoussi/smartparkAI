@@ -24,7 +24,7 @@ node_modules/
 backend/venv/
 dist/
 
-```
+# Images and generated frames
 yolo_frames/
 *.jpg
 *.png
@@ -33,10 +33,8 @@ yolo_frames/
 .env
 .env.*
 !.env.example
+vapid_keys.json
 
 # TLS certificates and private keys
 *.pem
 *.key
-
-# VAPID credentials
-vapid_keys.json
