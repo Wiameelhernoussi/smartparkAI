@@ -1,40 +1,67 @@
-# IA Models (Very Heavy)
+@'
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+backend/venv/
+
+# Dependencies and builds
+node_modules/
+dist/
+build/
+
+# AI models and generated data
 *.pt
 *.keras
 *.h5
 *.pkl
 models/
 train/results/
-
-# Binaries
-*.exe
-*.dll
-
-# Data & OS
 PKLot/
 dataset/
+dataset_parking/
+dataset_parking_nuit/
 videos/
-uncertain_queue/
-parking.db
-.DS_Store
-Thumbs.db
-
-# Dependencies
-node_modules/
-backend/venv/
-dist/
-
-# Images and generated frames
 yolo_frames/
-*.jpg
-*.png
+uncertain_queue/
+backend/models/
+backend/dataset/
+backend/videos/
+backend/uncertain_queue/
 
-# Secrets and local configuration
+# Local databases and backups
+*.sql
+*.sqlite
+*.sqlite3
+parking.db
+*backup_data*.sql
+
+# Secrets and environment files
 .env
 .env.*
 !.env.example
-vapid_keys.json
+*(2).env
+vapid_keys*.json
+**/vapid_keys*.json
 
-# TLS certificates and private keys
+# Certificates and private keys
 *.pem
 *.key
+*.mobileconfig
+
+# Binaries and generated images
+*.exe
+*.dll
+*.jpg
+*.png
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local backups and patches
+*.bundle
+*.patch
+'@ | Set-Content -Encoding utf8 .gitignore

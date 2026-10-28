@@ -42,11 +42,17 @@ import httpx
 import re
 import psutil
 
-# Charger les clés VAPID
-with open(get_path('vapid_keys.json')) as f:
-    VAPID_KEYS = json.load(f)
-VAPID_CLAIMS = {"sub": "mailto:admin@smartpark.ma"}
+import os
+from dotenv import load_dotenv
+load_dotenv(get_path(".env"))
 
+# Charger les clés VAPID
+# Charger les clés VAPID depuis les variables d'environnement
+VAPID_KEYS = {
+    "public_key": os.getenv("VAPID_PUBLIC_KEY"),
+    "private_key": os.getenv("VAPID_PRIVATE_KEY"),
+}
+VAPID_CLAIMS = {"sub": "mailto:admin@smartpark.ma"}
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
@@ -60,11 +66,10 @@ app.add_middleware(
 # Mais comme on va le mettre à la fin ou gérer l'ordre, on le définit ici.
 
 
-import os
-from dotenv import load_dotenv
+
 
 # Charger les variables d'environnement
-load_dotenv()
+
 
 SECRET_KEY = os.getenv("SECRET_KEY", "fallback-secret-if-missing")
 ALGORITHM = "HS256"
