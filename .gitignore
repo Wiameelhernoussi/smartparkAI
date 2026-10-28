@@ -28,3 +28,15 @@ dist/
 yolo_frames/
 *.jpg
 *.png
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# TLS certificates and private keys
+*.pem
+*.key
+
+# VAPID credentials
+vapid_keys.json
